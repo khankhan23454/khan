@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int ch=0,r,m[10]={85,72,66,90,58,44,77,69,81,35};
+    string n[10]={"Ali","Ahmad","Zain","Usman","Hassan","Bilal","Ayan","Hamza","Saad","Daniyal"};
+    float a; char g;
+
+    while(ch!=4){
+        cout<<"\n1.View All 2.Result by Roll 3.Grades 4.Exit\n";
+        cin>>ch;
+
+        if(ch==1)
+            for(int i=0;i<10;i++)
+                cout<<"Roll "<<i+1<<" "<<n[i]<<" "<<m[i]<<endl;
+
+        else if(ch==2){
+            cout<<"Enter Roll (1-10): ";
+            cin>>r; r--;
+            a=m[r];
+            g=(a>=80)?'A':(a>=60)?'B':(a>=40)?'C':'F';
+            cout<<"Name: "<<n[r]<<" Marks: "<<m[r]<<" Grade: "<<g<<endl;
+        }
+
+        else if(ch==3)
+            for(int i=0;i<10;i++){
+                a=m[i];
+                g=(a>=80)?'A':(a>=60)?'B':(a>=40)?'C':'F';
+                cout<<n[i]<<" Grade:"<<g<<endl;
+            }
+    }
+    return 0;
+}
